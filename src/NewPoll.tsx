@@ -31,6 +31,12 @@ const useStyles = makeStyles(theme => ({
     alignSelf: 'flex-end',
     minWidth: 112,
   },
+  link: {
+    color: 'white',
+  },
+  heart: {
+    color: theme.palette.secondary.main,
+  },
 }));
 
 function NewPoll() {
@@ -131,6 +137,18 @@ function NewPoll() {
           {loading ? <CircularProgress size={24} /> : 'Make Poll'}
         </Button>
       </form>
+      <Typography>
+        This project is also{' '}
+        <a
+          className={classes.link}
+          href="https://github.com/ricokahler/simplepoll.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          open source
+        </a>
+        . Contributions welcome <span className={classes.heart}>♥</span>
+      </Typography>
     </div>
   );
 }
