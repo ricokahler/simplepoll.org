@@ -22,9 +22,9 @@ function App() {
   return (
     <div className={classes.root}>
       <Switch>
-        <Route path="/" exact component={NewPoll} />
-        <Route path="/:pollId" component={Poll} />
         <Route path="/404" component={NotFound} />
+        <Route path="/:id" component={Poll} />
+        <Route path="/" exact component={NewPoll} />
         <Redirect to="/404" />
       </Switch>
     </div>

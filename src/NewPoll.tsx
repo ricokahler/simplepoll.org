@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import * as Types from './types';
 import { useHistory } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, TextField, Button, Divider, CircularProgress } from '@material-ui/core';
@@ -50,9 +51,9 @@ function NewPoll() {
     try {
       setLoading(true);
 
-      const poll = {
+      const poll: Types.Poll = {
         id: shortId(),
-        name,
+        question,
         ownerId: userId(),
         // type:
         options: choices
