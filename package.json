@@ -3,12 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.6.0",
+    "@material-ui/icons": "^4.5.1",
+    "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
+    "@types/react-router-dom": "^5.1.2",
+    "@types/shortid": "0.0.29",
+    "classnames": "^2.2.6",
+    "delay": "^4.3.0",
     "firebase": "^7.2.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-sortable-hoc": "^1.10.1",
+    "shortid": "^2.2.15",
     "typescript": "^3.7.2"
   },
   "scripts": {
