@@ -10,7 +10,6 @@ const useStyles = makeStyles(theme => ({
     margin: '0 auto',
     width: theme.breakpoints.values.sm,
     maxWidth: '100%',
-    border: '3px solid red',
     display: 'flex',
     flexDirection: 'column',
   },

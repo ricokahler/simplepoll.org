@@ -5,6 +5,7 @@ export interface Poll {
   // type: 'single' | 'multi';
   options: {
     [optionId: string]: {
+      id: string;
       label: string;
       position: number;
     };

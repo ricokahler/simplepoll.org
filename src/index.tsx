@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { CssBaseline, MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
+import { SnackbarProvider } from 'notistack';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
@@ -9,6 +10,9 @@ import './index.css';
 const theme = createMuiTheme({
   typography: {
     h1: {
+      fontWeight: 900,
+    },
+    h4: {
       fontWeight: 900,
     },
     h5: {
@@ -27,8 +31,10 @@ const theme = createMuiTheme({
 ReactDOM.render(
   <BrowserRouter>
     <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
+      <SnackbarProvider anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
+        <CssBaseline />
+        <App />
+      </SnackbarProvider>
     </MuiThemeProvider>
   </BrowserRouter>,
   document.querySelector('#root'),
