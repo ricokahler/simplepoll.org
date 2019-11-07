@@ -177,6 +177,11 @@ function Poll({ match }: Props) {
     setName(currentName);
   }, [poll]);
 
+  useEffect(() => {
+    if (!poll) return;
+    document.title = poll.question;
+  }, [poll]);
+
   if (!poll) {
     return (
       <div className={classes.loadingWrapper}>
