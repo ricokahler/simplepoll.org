@@ -36,6 +36,7 @@ const useStyles = makeStyles(theme => ({
   },
   heart: {
     color: theme.palette.secondary.main,
+    fontSize: 24,
   },
 }));
 
