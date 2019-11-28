@@ -11,6 +11,7 @@ import userId from './userId';
 import * as Types from './types';
 import firebase from './firebase';
 import calculatePoll from './calculatePoll';
+import useDebounce from './useDebounce';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -155,18 +156,19 @@ function Poll({ match }: Props) {
     return unlisten;
   }, [id, history, getPollRef]);
 
+  const debouncedName = useDebounce(name, 1000);
   useEffect(() => {
-    if (!name) return;
+    if (!debouncedName) return;
     const pollRef = getPollRef();
 
     async function updateName() {
       await pollRef.update({
-        [`users.${userId()}`]: name,
+        [`users.${userId()}`]: debouncedName,
       });
     }
 
     updateName();
-  }, [name, getPollRef]);
+  }, [debouncedName, getPollRef]);
 
   useEffect(() => {
     if (!poll) return;
